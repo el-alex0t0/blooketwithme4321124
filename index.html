@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AJC00T website</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #000000;
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0,0,0,0.9);
+      z-index: 100;
+    }
+
+    .title {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .menu-btn {
+      font-size: 32px;
+      cursor: pointer;
+      color: #aaaaaa;
+      transition: color 0.3s;
+    }
+
+    .menu-btn:hover {
+      color: #ffffff;
+    }
+
+    .dropdown {
+      position: absolute;
+      top: 60px;
+      right: 30px;
+      background: rgba(20,20,20,0.95);
+      border: 1px solid #333333;
+      min-width: 200px;
+      display: none;
+      z-index: 99;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    }
+
+    header:hover .dropdown {
+      display: block;
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 12px 20px;
+      color: #cccccc;
+      text-decoration: none;
+      font-size: 18px;
+      transition: background 0.2s;
+      border-bottom: 1px solid #222222;
+    }
+
+    .dropdown a:hover {
+      background: rgba(255,255,255,0.08);
+      color: #ffffff;
+    }
+
+    .dropdown a:last-child {
+      border-bottom: none;
+    }
+
+    main {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      color: #444444;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="title">AJC00T website</div>
+
+    <div class="menu-btn">☰</div>
+
+    <div class="dropdown">
+      <a href="index.html">Inicio</a>
+      <a href="extraw.html">Extras</a>
+      <a href="sobremi.html">Sobre mí</a>
+      <a href="galeria.html">Galería</a>
+      <a href="#">...</a>
+      <a href="#">...</a>
+    </div>
+  </header>
+
+  <main>
+    <p>Haiiii ;D</p>
+  </main>
+
+</body>
+</html>
