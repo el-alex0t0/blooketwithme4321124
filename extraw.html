@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Extras • AJC00T website</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #000000;
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0,0,0,0.9);
+      z-index: 200;
+    }
+
+    .title {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .menu-btn {
+      font-size: 32px;
+      cursor: pointer;
+      color: #aaaaaa;
+      transition: color 0.3s;
+    }
+
+    .menu-btn:hover {
+      color: #ffffff;
+    }
+
+    .dropdown {
+      position: absolute;
+      top: 60px;
+      right: 30px;
+      background: rgba(20,20,20,0.95);
+      border: 1px solid #333333;
+      min-width: 200px;
+      display: none;
+      z-index: 199;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    }
+
+    header:hover .dropdown {
+      display: block;
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 12px 20px;
+      color: #cccccc;
+      text-decoration: none;
+      font-size: 18px;
+      transition: background 0.2s;
+      border-bottom: 1px solid #222222;
+    }
+
+    .dropdown a:hover {
+      background: rgba(255,255,255,0.08);
+      color: #ffffff;
+    }
+
+    .dropdown a:last-child {
+      border-bottom: none;
+    }
+
+    .main-screen {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 20px 20px;
+      text-align: center;
+    }
+
+    .option-btn {
+      background: rgba(0,221,255,0.1);
+      border: 2px solid #00ddff;
+      color: #00ddff;
+      padding: 20px 40px;
+      font-size: 24px;
+      margin: 15px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s;
+      width: 300px;
+      text-align: center;
+    }
+
+    .option-btn:hover {
+      background: rgba(0,221,255,0.3);
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0,221,255,0.4);
+    }
+
+    .iframe-full {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: #000;
+      z-index: 150;
+      display: none;
+    }
+
+    .back-btn {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      background: rgba(0,0,0,0.8);
+      color: #ff3366;
+      border: 2px solid #ff3366;
+      padding: 10px 20px;
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 200;
+      border-radius: 8px;
+    }
+
+    .back-btn:hover {
+      background: #ff3366;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="title">Extras • AJC00T website</div>
+
+    <div class="menu-btn">☰</div>
+
+    <div class="dropdown">
+      <a href="index.html">Home</a>
+      <a href="extraw.html">Extras</a>
+      <a href="sobremi.html">About Me</a>
+      <a href="galeria.html">Gallery</a>
+      <a href="#">...</a>
+      <a href="#">...</a>
+    </div>
+  </header>
+
+  <div class="main-screen">
+    <h2 style="font-size: 48px; color: #00ddff; margin-bottom: 60px;">Choose a page</h2>
+
+    <button class="option-btn" onclick="openIframe('https://d3rtzzzsiu7gdr.cloudfront.net/library.html')">Library</button>
+
+    <button class="option-btn" onclick="openIframe('https://www.myinstants.com/en/categories/sound%20effects/')">Sound Effects</button>
+
+    <button class="option-btn" onclick="openIframe('https://demarcuseshistoricaldocuments.com/activities/')">Historical Activities</button>
+
+    <button class="option-btn" onclick="openIframe('https://smashkarts.io/')">Smash Karts</button>
+
+    <button class="option-btn" onclick="openIframe('https://unblocked-games.s3.amazonaws.com/index.html')">Unblocked Games</button>
+  </div>
+
+  <!-- Full-screen iframe -->
+  <iframe id="iframe-full" class="iframe-full" frameborder="0"></iframe>
+
+  <!-- Back button (hidden until iframe opens) -->
+  <button class="back-btn" id="backBtn" onclick="closeIframe()" style="display:none;">X Back</button>
+
+  <script>
+    function openIframe(url) {
+      document.getElementById('iframe-full').src = url;
+      document.getElementById('iframe-full').style.display = 'block';
+      document.getElementById('backBtn').style.display = 'block';
+      document.querySelector('.main-screen').style.display = 'none';
+    }
+
+    function closeIframe() {
+      document.getElementById('iframe-full').style.display = 'none';
+      document.getElementById('backBtn').style.display = 'none';
+      document.querySelector('.main-screen').style.display = 'flex';
+      document.getElementById('iframe-full').src = '';
+    }
+  </script>
+
+</body>
+</html>
