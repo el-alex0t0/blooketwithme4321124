@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería • AJC00T website</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { 
+      background:#000; 
+      color:#fff; 
+      font-family:Arial, sans-serif; 
+      min-height:100vh; 
+    }
+    header {
+      position:fixed; top:0; left:0; width:100%;
+      padding:15px 30px;
+      display:flex; justify-content:space-between; align-items:center;
+      background:rgba(0,0,0,0.9); z-index:100;
+    }
+    .title { font-size:26px; font-weight:bold; }
+    .menu-btn {
+      font-size:32px; cursor:pointer; color:#aaa;
+      transition:color 0.3s;
+    }
+    .menu-btn:hover { color:#00ddff; }
+    .dropdown {
+      position:absolute; top:55px; right:30px;
+      background:rgba(20,20,20,0.95); border:1px solid #333;
+      min-width:180px; display:none; z-index:99;
+      box-shadow:0 8px 16px rgba(0,0,0,0.6);
+    }
+    header:hover .dropdown { display:block; }
+    .dropdown a {
+      display:block; padding:12px 20px; color:#ccc; text-decoration:none;
+      font-size:16px; border-bottom:1px solid #222;
+    }
+    .dropdown a:hover { background:rgba(255,255,255,0.08); color:#fff; }
+    .dropdown a:last-child { border-bottom:none; }
+
+    main { 
+      padding-top:80px; 
+      padding: 100px 20px 40px;
+      text-align:center;
+    }
+    h1 { color:#00ddff; margin-bottom:40px; font-size:36px; }
+
+    .gallery {
+      display: flex;
+      overflow-x: auto;
+      gap: 15px;
+      padding-bottom: 20px;
+      scrollbar-width: thin;
+      scrollbar-color: #333 #111;
+    }
+    .gallery::-webkit-scrollbar {
+      height: 8px;
+    }
+    .gallery::-webkit-scrollbar-track {
+      background: #111;
+    }
+    .gallery::-webkit-scrollbar-thumb {
+      background: #333;
+      border-radius: 4px;
+    }
+    .gallery img {
+      height: 180px; /* tamaño chiquito */
+      width: auto;
+      border-radius: 10px;
+      border: 2px solid #222;
+      cursor: pointer;
+      transition: all 0.3s;
+      flex-shrink: 0;
+    }
+    .gallery img:hover {
+      transform: scale(1.1);
+      border-color: #00ddff;
+      box-shadow: 0 0 15px rgba(0,221,255,0.3);
+    }
+
+    /* Modal para foto grande */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 200;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.95);
+      align-items: center;
+      justify-content: center;
+    }
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+      border: 3px solid #00ddff;
+      box-shadow: 0 0 30px rgba(0,221,255,0.4);
+    }
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: #fff;
+      font-size: 50px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+    .close:hover { color: #ff3366; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="title">AJC00T website</div>
+    <div class="menu-btn">☰</div>
+    <div class="dropdown">
+      <a href="index.html">Home</a>
+      <a href="extraw.html">Extras</a>
+      <a href="sobremi.html">About Me</a>
+      <a href="galeria.html">Gallery</a>
+      <a href="#">...</a>
+      <a href="#">...</a>
+    </div>
+  </header>
+
+  <main>
+    <h1>Galería</h1>
+
+    <div class="gallery">
+      <img src="https://files.catbox.moe/odxyxb.jpg" alt="Selfie nocturna" onclick="openModal(this.src)">
+      <!-- Agrega más fotos aquí -->
+      <!-- <img src="TU_LINK_2.jpg" alt="Foto 2" onclick="openModal(this.src)"> -->
+      <!-- <img src="TU_LINK_3.jpg" alt="Foto 3" onclick="openModal(this.src)"> -->
+      <!-- <img src="TU_LINK_4.jpg" alt="Foto 4" onclick="openModal(this.src)"> -->
+    </div>
+
+    <p style="margin-top:30px; color:#888; font-size:18px;">
+      Click en una foto para verla ( no esta bien hecho ;v)
+    </p>
+  </main>
+
+  <!-- Modal para foto grande -->
+  <div id="modal" class="modal" onclick="closeModal()">
+    <span class="close" onclick="closeModal()">×</span>
+    <img id="modalImg">
+  </div>
+
+  <script>
+    function openModal(src) {
+      document.getElementById('modalImg').src = src;
+      document.getElementById('modal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
