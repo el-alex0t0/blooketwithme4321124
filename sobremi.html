@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre mí • AJC00T</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { 
+      background:#000000; 
+      color:#e0e0ff; 
+      font-family:Arial, Helvetica, sans-serif; 
+      height:100vh; 
+      overflow:hidden; 
+    }
+    header {
+      position:fixed; top:0; left:0; width:100%;
+      padding:15px 30px;
+      display:flex; justify-content:space-between; align-items:center;
+      background:rgba(0,0,0,0.9); z-index:100;
+    }
+    .title { font-size:26px; font-weight:bold; letter-spacing:1px; }
+    .menu-btn {
+      font-size:32px; cursor:pointer; color:#aaa;
+      transition:color 0.3s; padding:8px 12px; border-radius:6px;
+    }
+    .menu-btn:hover { color:#00ddff; background:rgba(0,221,255,0.1); }
+    .dropdown {
+      position:absolute; top:55px; right:30px;
+      background:rgba(20,20,20,0.95); border:1px solid #333;
+      min-width:180px; display:none; z-index:99;
+      box-shadow:0 8px 16px rgba(0,0,0,0.6);
+    }
+    header:hover .dropdown { display:block; }
+    .dropdown a {
+      display:block; padding:12px 20px; color:#ccc; text-decoration:none;
+      font-size:16px; transition:background 0.2s; border-bottom:1px solid #222;
+    }
+    .dropdown a:hover { background:rgba(255,255,255,0.08); color:#fff; }
+    .dropdown a:last-child { border-bottom:none; }
+    main { 
+      padding-top:80px; /* espacio para el header fijo */
+      height:calc(100vh - 80px); 
+      overflow-y:auto; 
+      display:flex; flex-direction:column; align-items:center; 
+      font-size:20px; line-height:1.6; 
+    }
+    h1 { color:#00ddff; text-align:center; margin:40px 0 20px; }
+    p { max-width:800px; margin:20px auto; text-align:center; }
+    a { color:#00ddff; text-decoration:none; }
+    a:hover { color:#fff; text-decoration:underline; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="title">AJC00T website</div>
+
+    <div class="menu-btn">☰</div>
+
+    <div class="dropdown">
+      <a href="index.html">Home</a>
+      <a href="extraw.html">Extras</a>
+      <a href="sobremi.html">About Me</a>
+      <a href="#">Gallery</a>
+      <a href="#">Thoughts</a>
+      <a href="#">Socials</a>
+    </div>
+  </header>
+
+  <main>
+    <h1>Sobre mí</h1>
+    <p>Yo soy Trinidad Alexander ;3 desde mi casa jajaja.</p>
+    <p>Me gusta jugar juegos y crear código.</p>
+    <p>Aquí pongo lo que se me ocurra: ideas y lo que sea.</p>
+    <p><a href="index.html">← Volver a Inicio</a></p>
+
+    <!-- Agrega aquí más cosas sobre ti cuando quieras -->
+    <!-- Ejemplo: -->
+    <!-- <p>Favoritos actuales: Smash Karts, lo-fi beats y vibes nocturnas.</p> -->
+  </main>
+
+</body>
+</html>
